@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
-var open = require("open");
+
 
 // Webpack Config
 var webpackConfig = {

@@ -1,12 +1,12 @@
 <h3>
   Foxes never quit
 </h3>
-<nav>
+<nav class="top-bar">
 	<a [routerLink]="['/']">
     Dashboard
   </a>
   |
-	<!-- <a [routerLink]="['/about']">
+	<a [routerLink]="['/about']">
     About
   </a>
   |
@@ -16,7 +16,26 @@
   |
 	<a [routerLink]="['/contact']">
     Contact Us
-  </a> -->
+  </a>
+</nav>
+
+
+<nav class="side-bar">
+	<a [routerLink]="['/']">
+    Dashboard
+  </a>
+  |
+	<a [routerLink]="['/about']">
+    About
+  </a>
+  |
+	<a [routerLink]="['/github', 'angular']">
+    Github Repos
+  </a>
+  |
+	<a [routerLink]="['/contact']">
+    Contact Us
+  </a>
 </nav>
 
 <div id="app">
