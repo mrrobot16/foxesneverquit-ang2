@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RepoBrowserComponent } from './github/repo-browser/repo-browser.component';
-import { RepoListComponent } from './github/repo-list/repo-list.component';
-import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
-import { ContactComponent } from './contact/contact.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RepoBrowserComponent } from './components/github/repo-browser/repo-browser.component';
+import { RepoListComponent } from './components/github/repo-list/repo-list.component';
+import { RepoDetailComponent } from './components/github/repo-detail/repo-detail.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

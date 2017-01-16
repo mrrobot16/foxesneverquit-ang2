@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
-import { GithubService } from './github/shared/github.service';
+
+import { GithubService } from './components/github/shared/github.service';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { MessageComponent } from './message/message.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RepoBrowserComponent } from './github/repo-browser/repo-browser.component';
-import { RepoListComponent } from './github/repo-list/repo-list.component';
-import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
+import { MessageComponent } from './components/dashboard/message/message.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RepoBrowserComponent } from './components/github/repo-browser/repo-browser.component';
+import { RepoListComponent } from './components/github/repo-list/repo-list.component';
+import { RepoDetailComponent } from './components/github/repo-detail/repo-detail.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
