@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { MessageComponent } from './message/message.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RepoBrowserComponent } from './github/repo-browser/repo-browser.component';
 import { RepoListComponent } from './github/repo-list/repo-list.component';

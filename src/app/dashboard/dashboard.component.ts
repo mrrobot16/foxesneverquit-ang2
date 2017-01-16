@@ -10,7 +10,7 @@ import {MessageComponent} from '../message/message.component';
         <h3>JUST TWEET IT</h3>
     </div>
     <div class="just-tweet-it-form">
-      <message>
+      <message></message>
     </div>
   </div>
   <nav>
