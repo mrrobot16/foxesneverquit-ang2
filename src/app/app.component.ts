@@ -4,51 +4,26 @@ import {Component} from '@angular/core';
   selector: 'app',
   template: `
     <h3>
-      Foxes never quit
+      FOXES NEVER QUIT
     </h3>
-    <nav class="top-bar">
-    	<a [routerLink]="['/']">
-        C
-      </a>
-      |
-    	<a [routerLink]="['/about']">
-        M
-      </a>
-      |
-    	<a [routerLink]="['/github', 'angular']">
-        A
-      </a>
-      |
-    	<a [routerLink]="['/contact']">
-        S
-      </a>
+    <nav>
+      <div class="top-bar">
+        <li><a [routerLink]="['/']">C</a></li>
+        <li><a [routerLink]="['/about']">M</a></li>
+        <li><a [routerLink]="['/github', 'angular']">A</a></li>
+        <li><a [routerLink]="['/contact']">S</a></li>
+      </div>
     </nav>
 
-
-    <nav class="side-bar">
-    	<a [routerLink]="['/']">
-        FB
-      </a>
-      |
-    	<a [routerLink]="['/about']">
-        TW
-      </a>
-      |
-    	<a [routerLink]="['/github', 'angular']">
-        IG
-      </a>
-
-    </nav>
-
-    <div id="app">
+  <div id="app">
       <main>
           <router-outlet></router-outlet>
       </main>
     </div>
 
-    <footer>
+    <!--<footer>
       © Foxes Never Quit 2017
-    </footer>
+    </footer>-->
   `,
   styleUrls: ['./app.component.css']
 })
