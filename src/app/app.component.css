@@ -1,0 +1,11 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;;
+  justify-content: space-around;
+}
