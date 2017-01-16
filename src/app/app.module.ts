@@ -1,14 +1,18 @@
+// Angular2 Objects
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
-import { rootRouterConfig } from './app.routes';
-import { AppComponent } from './app.component';
-
-import { GithubService } from './components/github/shared/github.service';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+// Routes
+import { rootRouterConfig } from './app.routes';
 
+
+// Services
+import { GithubService } from './components/github/shared/github.service';
+import { TwitterService } from './services/twitter/twitter.service';
+// Components
+import { AppComponent } from './app.component';
 import { MessageComponent } from './components/dashboard/message/message.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RepoBrowserComponent } from './components/github/repo-browser/repo-browser.component';
@@ -35,7 +39,7 @@ import { ContactComponent } from './components/contact/contact.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    GithubService
+    GithubService,TwitterService
   ],
   bootstrap: [ AppComponent ]
 })

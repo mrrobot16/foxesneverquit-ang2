@@ -6,6 +6,10 @@ import 'rxjs/add/operator/map';
 export class TwitterService {
   constructor(private http: Http) {}
 
+  getTweets(){
+    
+  }
+
   getOrg(org: string) {
     return this.makeRequest(`orgs/${org}`);
   }
