@@ -7,6 +7,7 @@ import {TwitterService} from '../../../services/twitter/twitter.service';
   <div class="message">
     <form (submit)="postMessage(message.value)">
       <div class="form-group">
+        <input [(ngModel)]='dateTime' ng2-datetime-picker/>
         <input type="text" #message placeholder="JUST TWEET IT">
       </div>
     </form>
@@ -14,6 +15,7 @@ import {TwitterService} from '../../../services/twitter/twitter.service';
   `
 })
 export class MessageComponent implements OnInit {
+  dateTime: any;
   constructor(private twitter:TwitterService){
 
   }

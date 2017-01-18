@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule} from '@angular/http';
+
+// Libraries
+import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 // Routes
 import { rootRouterConfig } from './app.routes';
 
@@ -36,6 +39,7 @@ import { ContactComponent } from './components/contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    Ng2DatetimePickerModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
