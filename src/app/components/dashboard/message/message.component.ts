@@ -1,32 +1,41 @@
-import {Component} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {TwitterService} from '../../../services/twitter/twitter.service';
 @Component({
   selector: 'message',
   styleUrls: ['./message.component.css'],
   template: `
   <div class="message">
-    <form (submit)="getTweets()">
+    <form (submit)="postMessage(message.value)">
       <div class="form-group">
-        <input type="text" placeholder="JUST TWEET IT" (keyenter)="testing()">
+        <input type="text" #message placeholder="JUST TWEET IT">
       </div>
     </form>
   </div>
   `
 })
-export class MessageComponent {
-  constructor(private twitter_service:TwitterService){
+export class MessageComponent implements OnInit {
+  constructor(private twitter:TwitterService){
 
   }
 
-  testing(){
+  ngOnInit(){
 
   }
+
 
   getTweets(){
-    this.twitter_service.getTweets();
+    return this.twitter.getAllTweets().then(res=>console.log(res))
   }
 
-  postMessage(){
-
+  postMessage(message:string){
+    console.log("message", message);
+    return this.twitter.postMessage(message).subscribe(
+            res => {
+              console.log("res: ", res)
+            },
+            err => {
+                console.log("err: ", err)
+              }
+        )
   }
 }
