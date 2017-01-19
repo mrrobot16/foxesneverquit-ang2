@@ -26,7 +26,7 @@
     "e2e:travis": "npm-run-all -p -r server:prod:ci protractor:delay",
     "e2e": "npm-run-all -p -r server:prod:ci protractor",
     "lint": "npm run tslint \"src/**/*.ts\"",
-    "postinstall": "npm run webdriver:update",
+    "postinstall": "",
     "postversion": "git push && git push --tags",
     "preclean:install": "npm run clean",
     "preversion": "npm test",
