@@ -3,6 +3,7 @@ import {Component,  OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // Services
 import {TwitterService} from '../../../services/twitter/twitter.service';
+
 @Component({
   selector: 'message',
   styleUrls: ['./message.component.css'],
@@ -37,8 +38,6 @@ export class MessageComponent implements OnInit {
   }
 
   postMessage(message:string){
-    console.log("this.messageForm", this.messageForm);
-
     return this.twitter.postMessage(this.messageForm.value.message).subscribe(
             res => {
               console.log("res: ", res)
@@ -47,16 +46,5 @@ export class MessageComponent implements OnInit {
                 console.log("err: ", err)
               }
         )
-  }
-  postMessage2(){
-    console.log("this.messageForm", this.messageForm)
-    // return this.twitter.postMessage("postMessage2 from ang2").subscribe(
-    //         res => {
-    //           console.log("res: ", res)
-    //         },
-    //         err => {
-    //             console.log("err: ", err)
-    //           }
-    //     )
   }
 }
