@@ -2,11 +2,6 @@
   "name": "foxes-never-quit",
   "version": "1.0.0",
   "description": "FOXES NEVER QUIT",
-  "keywords": [
-    "angular2",
-    "webpack",
-    "typescript"
-  ],
   "scripts": {
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build:aot": "npm run build:aot:prod",
@@ -75,6 +70,7 @@
     "@angularclass/hmr": "~1.2.2",
     "@angularclass/hmr-loader": "~3.0.2",
     "core-js": "^2.4.1",
+    "express": "^4.14.0",
     "http-server": "^0.9.0",
     "ie-shim": "^0.1.0",
     "jasmine-core": "^2.5.2",
