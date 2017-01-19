@@ -34,13 +34,13 @@ import { AppState } from './app.service';
       </a>
     </nav>
     <nav class="side-bar">
-      <a [routerLink]=" ['./fb'] " routerLinkActive="active">
+      <a [routerLink]=" ['./facebook'] " routerLinkActive="active">
         FB
       </a>
-      <a [routerLink]=" ['./home'] " routerLinkActive="active">
+      <a [routerLink]=" ['./twitter'] " routerLinkActive="active">
         TW
       </a>
-      <a [routerLink]=" ['./detail'] " routerLinkActive="active">
+      <a [routerLink]=" ['./instagram'] " routerLinkActive="active">
         IG
       </a>
     </nav>
@@ -54,7 +54,7 @@ import { AppState } from './app.service';
 <!--    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>-->
 
     <footer>
-      <span>&copy; 2017 FOXES NEVER QUIT by <a [href]="url">HG</a></span>
+      <span>&copy; 2017 FOXES NEVER QUIT by <a [href]="url">THE FOXES THAT NEVER EVER QUITED</a></span>
       <!-- <div>
        <a [href]="url">
           <img [src]="logo" width="25%">
