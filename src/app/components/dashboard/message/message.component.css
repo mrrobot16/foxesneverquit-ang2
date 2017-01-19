@@ -1,0 +1,9 @@
+.message > form > div {
+  display:flex;
+  flex-direction: column;
+}
+
+
+.message > form > div > textarea {
+  margin-bottom: 1em;
+}

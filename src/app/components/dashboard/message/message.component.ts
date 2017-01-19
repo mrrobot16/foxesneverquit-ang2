@@ -1,8 +1,10 @@
+/// <reference path="../../../../../typings/modules/flatpickr/index.d.ts" />
 // Angular 2 Objects
 import {Component,  OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // Services
 import {TwitterService} from '../../../services/twitter/twitter.service';
+import * as Flatpickr from "flatpickr";
 
 @Component({
   selector: 'message',
@@ -10,9 +12,10 @@ import {TwitterService} from '../../../services/twitter/twitter.service';
   template: `
   <div class="message">
     <form [formGroup]="messageForm" (submit)="postMessage()">
-      <div class="form-group">
-        <input formControlName='message' type="text" placeholder="JUST TWEET IT">
-        <input type="date" formControlName="schedule_time">
+      <div class="form-group" >
+        <textarea (keyup.enter)="postMessage()" formControlName='message' type="text" placeholder="JUST TWEET IT"></textarea>
+        <input id="schedule_time" type="text" formControlName="schedule_time" placeholder="Schedule tweet?">
+        <input id="post-tweet" type="submit" value="Tweet It!">
       </div>
     </form>
   </div>
@@ -26,10 +29,17 @@ export class MessageComponent implements OnInit {
   }
 
   ngOnInit(){
+    var datepicker = document.getElementById("schedule_time")
+    var date = new Flatpickr(datepicker, {
+      enableTime: true,
+      utc:true
+    })
+
     this.messageForm = this.formBuilder.group({
       message:[''],
-      schedule_time:[new Date()]
+      schedule_time:[]
     })
+
   }
 
 
@@ -37,8 +47,8 @@ export class MessageComponent implements OnInit {
     return this.twitter.getAllTweets().then(res=>console.log(res))
   }
 
-  postMessage(message:string){
-    return this.twitter.postMessage(this.messageForm.value.message).subscribe(
+  postMessage(){
+    return this.twitter.postMessage(this.messageForm.value).subscribe(
             res => {
               console.log("res: ", res)
             },

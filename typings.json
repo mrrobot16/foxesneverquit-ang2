@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    
+    "flatpickr": "github:DefinitelyTyped/DefinitelyTyped/flatpickr/index.d.ts"
   }
 }

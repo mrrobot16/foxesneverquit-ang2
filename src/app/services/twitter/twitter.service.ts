@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 @Injectable()
 export class TwitterService {
-  tweets_endpoint="http://hootsuite-takedown-rails.herokuapp.com/tweets"
+  tweets_endpoint = "http://hootsuite-takedown-rails.herokuapp.com/tweets"
   todos_endpoint = "https://todo-ang.herokuapp.com/todos"
   constructor(private http: Http) {
   }
@@ -25,10 +25,11 @@ export class TwitterService {
       })
   }
 
-  private postTweet(message:string): Observable<any>{
+  private postTweet(tweet_data:any): Observable<any>{
     let tweet = {
       tweet: {
-        description:message
+        description:(tweet_data.message+" time_tweet:"+tweet_data.schedule_time.toString()),
+        scheduled: new Date(tweet_data.schedule_time)
       }
     }
     let body = JSON.stringify(tweet);

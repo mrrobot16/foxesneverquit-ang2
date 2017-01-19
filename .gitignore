@@ -1,9 +1,5 @@
 /node_modules
 /typings
-/dist/
-
-
-
-
+/dist
 /npm-debug.log
 .DS_Store
