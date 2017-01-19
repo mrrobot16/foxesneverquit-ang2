@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset=UTF-8>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Foxes Never Quit</title>
-    <base href="/">
-    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+
+  <% if (webpackConfig.htmlElements.headTags) { %>
+  <!-- Configured Head Tags  -->
+  <%= webpackConfig.htmlElements.headTags %>
+  <% } %>
+  <!-- base url -->
+  <base href="/">
+</head>
+
+<body>
 <style>
-
-  .foxesneverquit {
-    /*position: relative;
-    top: 15em;*/
-  }
-
-  .foxesneverquit > h3 {
-    display:flex;
-    justify-content: center
-  }
+.foxesneverquit {
+  /*position: relative;
+  top: 15em;*/
+}
+.foxesneverquit > h3 {
+  display:flex;
+  justify-content: center
+}
 </style>
-    <app>
-      <div class="foxesneverquit">
-        <h3>KEEP CALM FOXES NEVER QUIT</h3>
-      </div>
-    </app>
+  <app>
+    <div class="foxesneverquit">
+      <h3>KEEP CALM FOXES NEVER QUIT</h3>
+    </div>
+  </app>
+  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
 
-    <script async src="/main.bundle.js"></script>
-
-  </body>
-  <script src="https://unpkg.com/flatpickr"></script>
+</body>
 
 </html>

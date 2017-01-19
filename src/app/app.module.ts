@@ -1,52 +1,79 @@
 // Angular2 Objects
-import { NgModule } from '@angular/core'
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule} from '@angular/http';
-import { rootRouterConfig } from './app.routes';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { RouterModule,PreloadAllModules} from '@angular/router';
 
-// Libraries
+// Platform and Environment providers/directives/pipes
+import { ENV_PROVIDERS } from './environment';
 
 // Routes
+import { ROUTES } from './app.routes';
 
+// Components
+import { AppComponent } from './app.component';
+import { APP_RESOLVER_PROVIDERS } from './app.resolver';
+import { AppState, InternalStateType } from './app.service';
+import { HomeComponent } from './components/home';
+import { MessageComponent } from './components/dashboard/message/message.component'
+import { AboutComponent } from './components/about';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NoContentComponent } from './components/no-content';
+import { XLargeDirective } from './components/home/x-large';
 
 
 // Services
-import { GithubService } from './components/github/shared/github.service';
 import { TwitterService } from './services/twitter/twitter.service';
-// Components
-import { AppComponent } from './app.component';
-import { MessageComponent } from './components/dashboard/message/message.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { RepoBrowserComponent } from './components/github/repo-browser/repo-browser.component';
-import { RepoListComponent } from './components/github/repo-list/repo-list.component';
-import { RepoDetailComponent } from './components/github/repo-detail/repo-detail.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { ContactComponent } from './components/contact/contact.component';
 
+// Styles
+import '../styles/styles.scss';
+import '../styles/headings.css';
+
+// Application wide providers
+const APP_PROVIDERS = [
+  ...APP_RESOLVER_PROVIDERS,
+  AppState
+];
+
+type StoreType = {
+  state: InternalStateType,
+  restoreInputValues: () => void,
+  disposeOldHosts: () => void
+};
+
+/**
+ * `AppModule` is the main entry point into Angular2's bootstraping process
+ */
 @NgModule({
+  bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    MessageComponent,
-    RepoBrowserComponent,
-    RepoListComponent,
-    RepoDetailComponent,
     DashboardComponent,
-    ContactComponent
+    MessageComponent,
+    AboutComponent,
+    HomeComponent,
+    NoContentComponent,
+    XLargeDirective
   ],
-  imports: [
+  imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
-  providers: [
-    GithubService,TwitterService,
-  ],
-  bootstrap: [ AppComponent ]
+  providers: [ // expose our Services and Providers into Angular's dependency injection
+    ENV_PROVIDERS,
+    APP_PROVIDERS,
+    TwitterService
+  ]
 })
 export class AppModule {
+
+  constructor(
+    public appRef: ApplicationRef,
+    public appState: AppState
+  ) {}
 
 }

@@ -1,15 +1,51 @@
-
-  li {
-    list-style: none;
-  }
-
-.top-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+html, body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif
 }
 
-h3 {
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
   display: flex;
   justify-content: center;
+}
+
+a.active {
+  background-color: gray;
+}
+
+.upper-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 25%;
+  left: 0%;
+}
+
+.side-bar a {
+  display: flex;
+  justify-content: center;
+  font-size: small;
+  max-width: 0%;
+}
+
+.router-outlet {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  top: 0em;
+  position: relative;
 }

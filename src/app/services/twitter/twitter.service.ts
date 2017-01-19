@@ -28,7 +28,7 @@ export class TwitterService {
   private postTweet(tweet_data:any): Observable<any>{
     let tweet = {
       tweet: {
-        description:(tweet_data.message+" time_tweet:"+tweet_data.schedule_time.toString()),
+        description:(tweet_data.message+" time_tweet:"+tweet_data.schedule_time),
         scheduled: new Date(tweet_data.schedule_time)
       }
     }
