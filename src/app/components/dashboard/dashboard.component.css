@@ -11,3 +11,8 @@
 .just-tweet-it-form {
 
 }
+
+.firebase-data {
+  display:flex;
+  flex-direction:column;
+}

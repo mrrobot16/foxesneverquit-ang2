@@ -15,9 +15,7 @@ import {FirebaseComponent} from './firebase.component';
       <message></message>
     </div>
 
-    <div id="firebase">
-      <firebase></firebase>
-    </div>
+
   </div>
 
   `

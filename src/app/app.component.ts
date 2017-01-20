@@ -29,8 +29,8 @@ import { AppState } from './app.service';
       <a [routerLink]=" ['./barrel'] " routerLinkActive="active">
         S
       </a>
-      <a [routerLink]=" ['./about'] " routerLinkActive="active">
-        D
+      <a [routerLink]=" ['./firebase'] " routerLinkActive="active">
+        F
       </a>
     </nav>
     <nav class="side-bar">

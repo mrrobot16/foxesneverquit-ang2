@@ -7,14 +7,14 @@ import { FirebaseService } from '../../services/firebase/firebase.service'
   styleUrls: ['./dashboard.component.css'],
   template: `
 
-  <div class="firebase">
+  <div id="firebase" class="firebase">
     <div class="firebase-container">
         <h3>JUST FIREBASE IT IT</h3>
     </div>
     <div class="firebase-data">
       <input type="text" placeholder="write your username" [(ngModel)]="user_name">
       <input type="password" placeholder="write your password" [(ngModel)]="password">
-      <input type="submit" value="save name" (click)="saveUserData()">
+      <input class="login-btn" type="submit" value="Login" (click)="saveUserData()">
     </div>
   </div>
 

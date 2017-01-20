@@ -8,7 +8,7 @@ export class FirebaseService {
   }
 
   getNames(){
-
+    
   }
 
   postUserName(user, password){

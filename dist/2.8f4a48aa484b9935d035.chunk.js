@@ -1,1 +1,1 @@
-webpackJsonp([2],{999:function(a,e){a.exports=[{res:"data"}]}});
+webpackJsonp([2],{1024:function(a,e){a.exports=[{res:"data"}]}});
