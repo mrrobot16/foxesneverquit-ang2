@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {MessageComponent} from './message/message.component';
+import {FirebaseComponent} from './firebase.component';
+
 @Component({
   selector: 'dashboard',
   styleUrls: ['./dashboard.component.css'],
@@ -11,6 +13,10 @@ import {MessageComponent} from './message/message.component';
     </div>
     <div class="just-tweet-it-form">
       <message></message>
+    </div>
+
+    <div id="firebase">
+      <firebase></firebase>
     </div>
   </div>
 

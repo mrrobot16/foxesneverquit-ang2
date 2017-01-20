@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.firebase > div {
+  display:flex;
+  justify-content: center;
+}
 
 .just-tweet-it-form {
 

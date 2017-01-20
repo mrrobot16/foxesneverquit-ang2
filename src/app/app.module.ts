@@ -5,6 +5,10 @@ import { HttpModule } from '@angular/http';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { RouterModule,PreloadAllModules} from '@angular/router';
 
+// AngularFire
+import {AngularFireModule} from "angularfire2";
+import {firebaseConfig} from "./app.firebase";
+
 // Platform and Environment providers/directives/pipes
 import { ENV_PROVIDERS } from './environment';
 
@@ -17,6 +21,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './components/home';
 import { MessageComponent } from './components/dashboard/message/message.component'
+import { FirebaseComponent } from './components/dashboard/firebase.component'
 import { AboutComponent } from './components/about';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NoContentComponent } from './components/no-content';
@@ -25,6 +30,7 @@ import { XLargeDirective } from './components/home/x-large';
 
 // Services
 import { TwitterService } from './services/twitter/twitter.service';
+import { FirebaseService } from './services/firebase/firebase.service';
 
 // Styles
 import '../styles/styles.scss';
@@ -51,6 +57,7 @@ type StoreType = {
     AppComponent,
     DashboardComponent,
     MessageComponent,
+    FirebaseComponent,
     AboutComponent,
     HomeComponent,
     NoContentComponent,
@@ -61,12 +68,14 @@ type StoreType = {
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    TwitterService
+    TwitterService,
+    FirebaseService
   ]
 })
 export class AppModule {
