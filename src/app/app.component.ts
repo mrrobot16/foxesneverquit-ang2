@@ -54,7 +54,7 @@ import { AppState } from './app.service';
 <!--    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>-->
 
     <footer>
-      <span>&copy; 2017 FOXES NEVER QUIT by <a [href]="url">THE FOXES THAT NEVER EVER QUITED</a></span>
+      <span>&copy; 2017 FOXES NEVER QUIT by <a [href]="url">THE FOXES THAT NEVER EVER FUCKING QUIT</a></span>
       <!-- <div>
        <a [href]="url">
           <img [src]="logo" width="25%">
